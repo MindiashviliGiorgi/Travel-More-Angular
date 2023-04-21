@@ -1,0 +1,24 @@
+<div class="header-main">
+    <div class="header-left">
+        <div class="aside-title">
+            <img [src]="logo">
+            <h1>Travel More</h1>
+        </div>
+    </div>
+    <div class="header-center">
+        <ul>
+            <li [routerLink]="''">Hotels</li>
+            <li [routerLink]="'aboutpage'">About</li>
+            <li [routerLink]="'contactpage'">Contact</li>
+        </ul>
+    </div>
+    <div class="header-right">
+        <div class="open-admin-panel" [routerLink]="'admin'">
+            <img [src]="adminPanel">
+            <h3>Admin Panel</h3>
+        </div>
+        <div class="logout-system">
+            <img [src]="myImg" [routerLink]="'loginSystem'">
+        </div>
+    </div>
+</div>

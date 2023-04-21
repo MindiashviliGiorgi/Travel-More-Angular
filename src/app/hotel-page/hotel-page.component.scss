@@ -1,0 +1,22 @@
+.hotel-page-main {
+  width: 100%;
+  height: 700px;
+  background-color: #0c3144;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 10px;
+  padding: 20px 100px;
+  .hotel-page-left {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    flex: 1;
+  }
+  .hotel-page-right {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    flex: 1;
+  }
+}

@@ -1,0 +1,108 @@
+<div class="login-main">
+    <div class="icon-logo">
+        <div class="aside-title">
+            <img [src]="logo">
+            <h1>Travel More</h1>
+        </div>
+    </div>
+    <div class="container-main">
+        <div class="container-title">
+            <h3 id="si" (click)="signInLink()" style="color: '#71cdff'">Sign In
+                <span id="light"></span>
+            </h3>
+            <h3 id="su" (click)="signUpLink()">Sign Up</h3>
+        </div>
+        <div class="container">
+            <!-- sign-in -->
+            <div class="sign-in" *ngIf="signIn">
+                <div class="sign-in-title">
+                    <h2>Sign in to Website</h2>
+                </div>
+                <div class="sign-in-socials">
+                    <img [src]="loginFbIcon">
+                    <img [src]="loginTwitterIcon">
+                    <img [src]="loginIgIcon">
+                    <img [src]="loginInIcon">
+                </div>
+                <div class="sign-in-small">
+                    <small>or use your account</small>
+                </div>
+                <div class="form-div">
+                    <form action="">
+                        <input type="email" [placeholder]="emailPlaceholder">
+                        <input type="password" [placeholder]="passwordPlaceholder">
+                    </form>
+                </div>
+                <div class="forgot-pass">
+                    <p>Forgot your password ?</p>
+                </div>
+                <div class="sbmt">
+                    <input type="submit" value="Sign In"  [routerLink]="''">
+                </div>
+            </div>
+            <!-- hello-frinend-sign-up  -->
+            <div class="hello-friend" *ngIf="helloFriend">
+                <div class="hello-friend-title">
+                    <h1>Hello Friend !</h1>
+                </div>
+                <div class="hello-friend-info">
+                    <p>Enter your personal details and start<br>
+                        journey with us
+                    </p>
+                </div>
+                <div class="hello-friend-btn">
+                    <button (click)="signUpBtn()">Sign Up</button>
+                </div>
+            </div>
+            <!-- sign up  -->
+            <div class="sign-up" *ngIf="signUp">
+                <div class="sign-up-title">
+                    <h1>Create Account</h1>
+                </div>
+                <div class="choice-status">
+                    <h3>What is your status ?</h3>
+                </div>
+                <div class="sign-up-choice">
+                    <div class="choice-manager">
+                        <h3>Hotel Manager</h3>
+                        <input type="radio">
+                    </div>
+                    <div class="choice-guest">
+                        <h3>Guest</h3>
+                        <input type="radio">
+                    </div>
+                </div>
+                <div class="sign-up-form">
+                    <form action="">
+                        <input type="name" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <div class="btn-div">
+                            <input type="submit" value="Sign Up" class="btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- welcome back -->
+            <div class="welcome-back" *ngIf="welcome">
+                <div class="welcome-back-title">
+                    <h1>Welcome Back !</h1>
+                </div>
+                <div class="welcome-back-info">
+                    <p>To keep connected with us please login<br>
+                        with your personal info
+                    </p>
+                </div>
+                <div class="welcome-back-btn">
+                    <button (click)="signInBtn()">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="box" [class.oxba]="check"></div>
+    <button (click)="wow()">Swith Color</button>
+    -->
+</div>
+<app-footer></app-footer>

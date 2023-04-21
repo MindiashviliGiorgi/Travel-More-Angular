@@ -1,0 +1,91 @@
+.footer-main {
+    width: 100%;
+    height: 140px;
+    background-color: #061e2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    .footer-logo {
+        .aside-title {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5px;
+            padding: 10px 0px;
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+            h1 {
+                font-size: 22px;
+                letter-spacing: 1.5px;
+                color: #DFE9F4;
+                font-family: 300;
+                margin-top: 6px;
+            }
+        }
+    }
+    .footer-center {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 15px;
+        .links {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 25px;
+            a {
+                text-decoration: none;
+                width: 40px;
+                height: 40px;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: cover;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        .copyright {
+            p {
+                color: #fff;
+                font-size: 13px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 200;
+            }
+        }
+    }
+    .footer-right {
+        .contact {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            .phone,
+            .gmail {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                column-gap: 10px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                }
+                p {
+                    color: #fff;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}

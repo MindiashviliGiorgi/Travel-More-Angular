@@ -1,0 +1,149 @@
+<app-aside></app-aside>
+<app-admin-header></app-admin-header>
+<section>
+<div class="hotels-section">
+    <div class="hotels-main">
+        <div class="hotels-top">
+            <div class="hotels-top-left">
+                <div class="data-title">
+                    <h3>Hotels list</h3>
+                </div>
+                <div class="new-items">
+                    <button>New Items</button>
+                </div>
+            </div>
+            <div class="hotels-top-right">
+                <div class="select">
+                    <input type="text" [placeholder]="placeholderSelect">
+                    <img [src]="selectIcon">
+                </div>
+                <div class="search">
+                    <input type="search" name="search" id="search" [placeholder]="searchPlc">
+                    <img [src]="searchIcon">
+                </div>
+                <div class="decoration">
+                    <img [src]="decoreIcon">
+                </div>
+                <div class="add-btn">
+                    <button (click)="addNewHotel()">Add new</button>
+                </div>
+            </div>
+        </div>
+        <div class="hotels-middle">
+            <ul>
+                <li><p>#</p></li>
+                <li><p>Name</p></li>
+                <li><p>Stars</p></li>
+                <li><p>Registration date</p></li>
+                <li><p>Action</p></li>
+            </ul>
+        </div>
+        <div class="hotels-data">
+            <div class="hotels-container">
+                <ul (click)="openHotelInfo()" *ngFor="let user of userInfos">
+                    <li><p>{{user.id}}</p></li>
+                    <li><p>{{user.name}}</p></li>
+                    <li><p>{{user.username}}</p></li>
+                    <li><p>20.08.2023</p></li>
+                    <li class="edit-delete">
+                        <p>Edit</p>
+                        <p>Delete</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="add-new-window" *ngIf="showAddNewWindow">
+    <div class="container">
+        <form action="">
+            <div class="title">
+                <h1>Add Hotel</h1>
+                <img [src]="closeIcon" (click)="closeAddNewHotel()">
+            </div>
+            <div class="set">
+                <div class="set-left">
+                    <div class="name">
+                        <label for="name">Name</label>
+                        <input type="name">
+                    </div>
+                    <div class="address">
+                        <label for="address">Address</label>
+                        <input type="text">
+                    </div>
+                    <div class="profPic">
+                        <label for="profPic">Prof Picture</label>
+                        <input type="file">
+                    </div>
+                    <div class="payment">
+                        <label for="payment">Payment</label>
+                        <select name="payment" id="payment">
+                            <option value="cash">Cash</option>
+                            <option value="card">Card</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="set-right">
+                    <div class="city">
+                        <label for="city">City</label>
+                        <input type="text">
+                    </div>
+                    <div class="stars">
+                        <label for="stars">Stars</label>
+                        <select name="stars" id="stars">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="about-hotel">
+                        <label for="info">About Hotel</label>
+                        <textarea name="info" id="info" cols="57" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="for-submit">
+                <div class="submit-btn">
+                    <input type="submit" class="sbmt">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="open-hotel-info" *ngIf="hotelsInfo">
+    <div class="container">
+        <div class="container-up">
+            <div class="up-left">
+                <img [src]="hotelImg">
+            </div>
+            <div class="up-right">
+                <div class="name">
+                    <!-- <h1>Clarion Hotel Amaranten</h1> -->
+                    <h1>{{userInfos[0].name}}</h1>
+                </div>
+                <div class="address">
+                    <p>Address: {{userInfos[0].address.street}}</p>
+                </div>
+                <div class="city">
+                    <p>City: {{userInfos[0].address.city}}</p>
+                </div>
+                <div class="stars">
+                    <p>Stars: 5</p>
+                </div>
+                <div class="payment">
+                    <p>Payment: Cash/Card</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-down">
+            <textarea name="hotelinfo" id="hotelinfo" cols="83" rows="5">About Hotel...</textarea>
+        </div>
+        <div class="container-btn">
+            <button (click)="closeHotelInfo()">Cancel</button>
+        </div>
+    </div>
+</div>
+</section>
+<app-footer></app-footer>

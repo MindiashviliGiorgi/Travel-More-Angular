@@ -1,0 +1,102 @@
+.aside-main {
+    width: 270px;
+    height: 75vh;
+    position: fixed;
+    padding: 20px 30px;
+    border-bottom-right-radius: 300px;
+    background-color: #061e2b;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    box-shadow: -1px 6px 10px 2px #0b2038;
+    .aside-title {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 5px;
+        padding: 10px 0px;
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 22px;
+            letter-spacing: 1.5px;
+            color: #DFE9F4;
+            font-family: 300;
+            margin-top: 6px;
+        }
+    }
+    .aside-links {
+        ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 50px;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0px;
+            li {
+                list-style: none;
+                cursor: pointer;
+                transition: 0.2s;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    background-color: #054C73;
+                    content: '';
+                    bottom: 0;
+                    left: 0;
+                    transition: 0.2s;
+                }
+                &:hover::after {
+                    width: 100%;
+                    transition: 0.2s;
+                }
+                &:hover {
+                    transform: translate(5px);
+                    transition: 0.2s;
+                }
+                a {
+                    color: #054C73;
+                    font-size: 25px;
+                    font-family: Alkatra;
+                    cursor: pointer;
+                }
+                img {
+                    width: 15px;
+                    height: 15px;
+                    object-fit: cover;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .aside-logout {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 50px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0px;
+        button {
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #DFE9F4;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
