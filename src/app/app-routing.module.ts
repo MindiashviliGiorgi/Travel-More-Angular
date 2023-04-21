@@ -10,7 +10,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 const routes: Routes = [
   {
     path : '',
-    component : HotelsMainPageComponent     
+    component : HotelPageComponent     
   },
   {
     path : 'loginSystem',
@@ -21,8 +21,8 @@ const routes: Routes = [
     component : HotelsPanelComponent
   },
   {
-    path : 'hotelpage',
-    component : HotelPageComponent
+    path : 'hotelsmain',
+    component : HotelsMainPageComponent
   },
   {
     path : 'aboutpage',
