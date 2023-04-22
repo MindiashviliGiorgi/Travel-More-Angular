@@ -8,7 +8,37 @@
     <img [src]="starsImg">
     <img [src]="starsImg">
   </div>
-  <div class="hotel-images"></div>
+  <div class="rooms-nav">
+    <ul>
+      <li (click)="bShow()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Bedrooms</li>
+      <li (click)="livingRoomShow()" [routerLinkActive]="'active'">Living rooms</li>
+      <li (click)="bathroomShow()" [routerLinkActive]="'active'">Bathroom</li>
+      <li (click)="kitchenShow()"  [routerLinkActive]="'active'">Kitchen</li>
+      <li (click)="foodShow()"  [routerLinkActive]="'active'">Food</li>
+    </ul>
+  </div>
+  <div class="hotel-rooms-main">
+    <!-- bedrooms  -->
+    <div class="hotel-rooms" *ngIf="bhide">
+      <app-carousel [images]="bedrooms"></app-carousel>
+    </div>
+    <!-- living rooms  -->
+    <div class="hotel-rooms"  *ngIf="lhide">
+      <app-carousel [images]="livingRooms"></app-carousel>
+    </div>
+    <!-- bathroom  -->
+    <div class="hotel-rooms"  *ngIf="bathhide">
+      <app-carousel [images]="bathrooms"></app-carousel>
+    </div>
+    <!-- kitchens  -->
+    <div class="hotel-rooms"  *ngIf="kithide">
+      <app-carousel [images]="kitchens"></app-carousel>
+    </div>
+    <!-- food  -->
+    <div class="hotel-rooms" *ngIf="foodhide">
+      <app-carousel [images]="food"></app-carousel>
+    </div>
+  </div>
   <div class="hotel-information"></div>
 </div>
 <app-footer></app-footer>

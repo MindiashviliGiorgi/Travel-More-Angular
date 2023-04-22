@@ -13,7 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HotelsMainPageComponent } from './hotels-main-page/hotels-main-page.component';
 import { HotelPageComponent } from './hotel-page/hotel-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component'
+import { ContactPageComponent } from './contact-page/contact-page.component';
+import { CarouselComponent } from './carousel/carousel.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component'
     HotelsMainPageComponent,
     HotelPageComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
