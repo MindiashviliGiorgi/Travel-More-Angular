@@ -9,6 +9,22 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hotel-page.component.scss']
 })
 export class HotelPageComponent {
+
+  //facilitiesIcons
+  noSmoking:string = '/assets/images/no-smoking.png';
+  airport:string = '/assets/images/airport-transfer.png';
+  disabledGuest:string = '/assets/images/wheelchair.png';
+  wifi:string = '/assets/images/wifi.png';
+  parking:string = '/assets/images/parking.png';
+  restaurant:string = '/assets/images/restaurantt.png';
+  roomService:string = '/assets/images/room-service.png';
+  heating:string = '/assets/images/heating.png';
+  bar:string = '/assets/images/bar.png';
+  //
+
+
+
+
   starsImg:string = '/assets/images/star-icon.png';
   hotelViewImg:string = '/assets/images/hotel-khedi.jpg';
   hotelLivingRoom1:string = '/assets/images/hotel-main-3.jpg';
@@ -19,6 +35,13 @@ export class HotelPageComponent {
   bathhide:boolean = false;
   kithide:boolean = false;
   foodhide:boolean = false;
+
+  activeLinkBedroom:boolean = false;
+  activeLinkLivingRoom:boolean = false;
+  activeLinkBathroom:boolean = false;
+  activeLinkKitchen:boolean = false;
+  activeLinkFood:boolean = false;
+  
 
   ngOnInit() : void {
     this.bShow();
@@ -32,6 +55,12 @@ export class HotelPageComponent {
     this.bathhide = false;
     this.kithide = false;
     this.foodhide = false;
+    //active Links
+    this.activeLinkBedroom = true;
+    this.activeLinkLivingRoom = false;
+    this.activeLinkBathroom = false;
+    this.activeLinkFood = false;
+    this.activeLinkKitchen = false;
   };
   livingRoomShow(){
     this.bhide = false;
@@ -39,6 +68,12 @@ export class HotelPageComponent {
     this.bathhide = false;
     this.kithide = false;
     this.foodhide = false;
+    //active Links
+    this.activeLinkBedroom = false;
+    this.activeLinkLivingRoom = true;
+    this.activeLinkBathroom = false;
+    this.activeLinkFood = false;
+    this.activeLinkKitchen = false;
   };
   bathroomShow(){
     this.bhide = false;
@@ -46,6 +81,12 @@ export class HotelPageComponent {
     this.bathhide = true;
     this.kithide = false;
     this.foodhide = false;
+    //active Links
+    this.activeLinkBedroom = false;
+    this.activeLinkLivingRoom = false;
+    this.activeLinkBathroom = true;
+    this.activeLinkFood = false;
+    this.activeLinkKitchen = false;
   };
   kitchenShow(){
     this.bhide = false;
@@ -53,6 +94,12 @@ export class HotelPageComponent {
     this.bathhide = false;
     this.kithide = true;
     this.foodhide = false;
+    //active Links
+    this.activeLinkBedroom = false;
+    this.activeLinkLivingRoom = false;
+    this.activeLinkBathroom = false;
+    this.activeLinkFood = false;
+    this.activeLinkKitchen = true;
   }
   foodShow(){
     this.bhide = false;
@@ -60,6 +107,12 @@ export class HotelPageComponent {
     this.bathhide = false;
     this.kithide = false;
     this.foodhide = true;
+    //active Links
+    this.activeLinkBedroom = false;
+    this.activeLinkLivingRoom = false;
+    this.activeLinkBathroom = false;
+    this.activeLinkFood = true;
+    this.activeLinkKitchen = false;
   }
 
 

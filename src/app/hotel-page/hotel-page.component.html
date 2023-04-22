@@ -10,11 +10,11 @@
   </div>
   <div class="rooms-nav">
     <ul>
-      <li (click)="bShow()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Bedrooms</li>
-      <li (click)="livingRoomShow()" [routerLinkActive]="'active'">Living rooms</li>
-      <li (click)="bathroomShow()" [routerLinkActive]="'active'">Bathroom</li>
-      <li (click)="kitchenShow()"  [routerLinkActive]="'active'">Kitchen</li>
-      <li (click)="foodShow()"  [routerLinkActive]="'active'">Food</li>
+      <li (click)="bShow()"><a [class.active]="activeLinkBedroom">Bedroom</a></li>
+      <li (click)="livingRoomShow()"><a [class.active]="activeLinkLivingRoom">Living Room</a></li>
+      <li (click)="bathroomShow()"><a [class.active]="activeLinkBathroom">Bathroom</a></li>
+      <li (click)="kitchenShow()"><a [class.active]="activeLinkKitchen">Kitchen</a></li>
+      <li (click)="foodShow()"><a [class.active]="activeLinkFood">Food</a></li>
     </ul>
   </div>
   <div class="hotel-rooms-main">
@@ -39,6 +39,66 @@
       <app-carousel [images]="food"></app-carousel>
     </div>
   </div>
-  <div class="hotel-information"></div>
+  <div class="hotel-information">
+    <div class="hotel-about">
+      <p>Set in the former publishing house of Tbilisi, Stamba Hotel – lauded as a flawless fusion of vintage and contemporary, is a living, breathing reflection of the city’s growing global<br>
+         significance.
+        Featuring uniquely designed and generously sized guestrooms, the hotel allures visitors at once. Yet there’s more to it: cloud-like beds, personal McIntosh brand hi-fi systems, La Marzocco coffee machines, gilded free-standing brass bathtubs and showers, minibars, and flat-screen TVs. The bathrooms come with slippers and hairdryers.
+        The sights vary as the large windows of each room overlook the different parts of the hotel’s premises, counting the five-story-high atrium and several gardens.
+        On the ground floor, there is Café Stamba - enchanting visitors with quintessential sentiments and style of the previous century and offering a great gastronomic experience: gourmet cuisine prepared with fresh and locally sourced products, signature cocktails crafted and served at the American-aesthetic pink bar, and the outstanding Stamba Chocolaterie – with its artisan chocolate and coffee.
+        <br>
+        <br>
+        Additionally, the hotel provides room service and breakfast in the room upon request.
+        Many of Georgia’s historical and cultural sites, including the Georgian National Museum, the Opera & Ballet Theatre, and the Parliament, are within walking distance.
+        <br>
+        <br>
+        This is our guests' favourite part of Tbilisi City, according to independent reviews.
+        <br>
+        Couples particularly like the location — they rated it 9.5 for a two-person trip.
+      </p>
+    </div>
+    <div class="facilities-title">
+      <h3>Most popular facilities</h3>
+    </div>
+    <div class="hotel-facilities">
+      <div class="facilities">
+        <img [src]="noSmoking">
+        <p>Non-smoking rooms</p>
+      </div>
+      <div class="facilities">
+        <img [src]="airport">
+        <p>Airport shuttle</p>
+      </div>
+      <div class="facilities">
+        <img [src]="disabledGuest">
+        <p>Facilities for disabled guests</p>
+      </div>
+      <div class="facilities">
+        <img [src]="wifi">
+        <p>Free WiFi</p>
+      </div>
+      <div class="facilities">
+        <img [src]="parking">
+        <p>Free parking</p>
+      </div>
+      <div class="facilities">
+        <img [src]="roomService">
+        <p>Room service</p>
+      </div>
+      <div class="facilities">
+        <img [src]="restaurant">
+        <p>Restaurant</p>
+      </div>
+      <div class="facilities">
+        <img [src]="heating">
+        <p>Heating</p>
+      </div>
+      <div class="facilities">
+        <img [src]="bar">
+        <p>Bar</p>
+      </div>
+      
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
