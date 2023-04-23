@@ -1,24 +1,24 @@
 <div class="header-main">
     <div class="header-left">
-        <div class="aside-title" [routerLink]="'hotelsmain'">
+        <div class="aside-title" [routerLink]="'/hotelsmain'">
             <img [src]="logo">
             <h1>Travel More</h1>
         </div>
     </div>
     <div class="header-center">
         <ul>
-            <li [routerLink]="'hotelsmain'">Hotels</li>
-            <li [routerLink]="'aboutpage'">About</li>
-            <li [routerLink]="'contactpage'">Contact</li>
+            <li [routerLink]="'/hotelsmain'">Hotels</li>
+            <li>Offers</li>
+            <li>Contact</li>
         </ul>
     </div>
     <div class="header-right">
-        <div class="open-admin-panel" [routerLink]="'admin'">
+        <div class="open-admin-panel" [routerLink]="'/adminpanel'">
             <img [src]="adminPanel">
             <h3>Admin Panel</h3>
         </div>
         <div class="logout-system">
-            <img [src]="myImg" [routerLink]="'loginSystem'">
+            <img [src]="myImg" [routerLink]="'/'">
         </div>
     </div>
 </div>

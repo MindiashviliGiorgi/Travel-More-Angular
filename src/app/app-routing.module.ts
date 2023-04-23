@@ -10,27 +10,19 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 const routes: Routes = [
   {
     path : '',
-    component : HotelPageComponent     
-  },
-  {
-    path : 'loginSystem',
-    component : LoginComponent
-  },
-  {
-    path : 'admin',
-    component : HotelsPanelComponent
+    component : LoginComponent     
   },
   {
     path : 'hotelsmain',
     component : HotelsMainPageComponent
   },
   {
-    path : 'aboutpage',
-    component : AboutPageComponent
+    path : 'hotelpage',
+    component : HotelPageComponent
   },
   {
-    path : 'contactpage',
-    component : ContactPageComponent
+    path : 'adminpanel',
+    component : HotelsPanelComponent
   },
 ];
 

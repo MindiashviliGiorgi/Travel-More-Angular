@@ -33,8 +33,8 @@ import { CarouselComponent } from './carousel/carousel.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core'; 
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core'; 
 
 
 
@@ -9,6 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hotel-page.component.scss']
 })
 export class HotelPageComponent {
+
+
+  constructor() {}
 
   //facilitiesIcons
   noSmoking:string = '/assets/images/no-smoking.png';
@@ -21,6 +24,12 @@ export class HotelPageComponent {
   heating:string = '/assets/images/heating.png';
   bar:string = '/assets/images/bar.png';
   //
+
+  bedIcon:string = '/assets/images/bed-2.png';
+  personIcon:string = '/assets/images/person.png';
+
+
+
 
 
 
@@ -215,6 +224,109 @@ export class HotelPageComponent {
   
 
   
+  //hotel-reservation
 
+  @Output() CheckInAdded = new EventEmitter<string>();
+
+  @ViewChild('checkInDate') checkInDate: ElementRef | undefined;
+  @ViewChild('checkOutDate') checkOutDate: ElementRef | undefined;
+
+
+  showCheckInTime:string = '';
+  showCheckOutTime:string = '';
+  showRoomStyle:string = '';
+  showTotalPrice:any = '';
+  totalAmount:boolean = false;
+
+  date1 : any;
+  date2 : any;
+  Days:any = '';
+
+  showPriceStardardRoom(){
+    this.totalAmount = true;
+
+    this.showRoomStyle = 'Stardard room';
+
+    let checkInTime:any= this.checkInDate?.nativeElement.value;
+    this.showCheckInTime = checkInTime;
+
+    let checkOutTime:any = this.checkOutDate?.nativeElement.value;
+    this.showCheckOutTime = checkOutTime;
+
+    const date1Modified = new Date(checkInTime);
+    const date2Modified = new Date(checkOutTime);
+
+    const Time = date2Modified.getTime() - date1Modified.getTime();
+
+    this.Days = "For " + Time / (1000 * 3600 * 24 ) + " Days, Per day 100Gel";
+
+    const totalPrice = (Time / (1000 * 3600 * 24)) * 100;
+    this.showTotalPrice = totalPrice + "Gel";
+
+  }
+  showPriceSuperiorRoom(){
+    this.totalAmount = true;
+
+    this.showRoomStyle = 'Superior room';
+
+    let checkInTime:any= this.checkInDate?.nativeElement.value;
+    this.showCheckInTime = checkInTime;
+
+    let checkOutTime:any = this.checkOutDate?.nativeElement.value;
+    this.showCheckOutTime = checkOutTime;
+
+    const date1Modified = new Date(checkInTime);
+    const date2Modified = new Date(checkOutTime);
+
+    const Time = date2Modified.getTime() - date1Modified.getTime();
+
+    this.Days = "For " + Time / (1000 * 3600 * 24 ) + " Days, Per day 150Gel";
+
+    const totalPrice = (Time / (1000 * 3600 * 24)) * 150;
+    this.showTotalPrice = totalPrice + "Gel";
+  }
+
+  showFamilyRoom(){
+    this.totalAmount = true;
+
+    this.showRoomStyle = 'Family room';
+
+    let checkInTime:any= this.checkInDate?.nativeElement.value;
+    this.showCheckInTime = checkInTime;
+
+    let checkOutTime:any = this.checkOutDate?.nativeElement.value;
+    this.showCheckOutTime = checkOutTime;
+
+    const date1Modified = new Date(checkInTime);
+    const date2Modified = new Date(checkOutTime);
+
+    const Time = date2Modified.getTime() - date1Modified.getTime();
+
+    this.Days = "For " + Time / (1000 * 3600 * 24 ) + " Days, Per day 200Gel";
+
+    const totalPrice = (Time / (1000 * 3600 * 24)) * 200;
+    this.showTotalPrice = totalPrice + "Gel";
+  }
+  showPremiumRoom(){
+    this.totalAmount = true;
+
+    this.showRoomStyle = 'Premium room';
+
+    let checkInTime:any= this.checkInDate?.nativeElement.value;
+    this.showCheckInTime = checkInTime;
+
+    let checkOutTime:any = this.checkOutDate?.nativeElement.value;
+    this.showCheckOutTime = checkOutTime;
+
+    const date1Modified = new Date(checkInTime);
+    const date2Modified = new Date(checkOutTime);
+
+    const Time = date2Modified.getTime() - date1Modified.getTime();
+
+    this.Days = "For " + Time / (1000 * 3600 * 24 ) + " Days, Per day 250Gel";
+
+    const totalPrice = (Time / (1000 * 3600 * 24)) * 250;
+    this.showTotalPrice = totalPrice + "Gel";
+  }
 
 }

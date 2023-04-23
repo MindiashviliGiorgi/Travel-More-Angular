@@ -100,5 +100,129 @@
       
     </div>
   </div>
+  <div class="availability">
+    <div class="availability-title">
+      <h3>Availability</h3>
+    </div>
+    <div class="availability-checkin">
+      <div class="check-in">
+        <p>Check-in:</p>
+        <input type="date" class="check-in" #checkInDate>
+      </div>
+      <div class="check-out">
+        <p>Check-out:</p>
+        <input type="date" class="check-out" #checkOutDate>
+      </div>
+    </div>
+    <div class="availability-rooms">
+      <div class="room-type">
+        <p>Room type</p>
+      </div>
+      <div class="sleeps">
+        <p>Sleeps</p>
+      </div>
+      <div class="empty"></div>
+      <!-- room-1  -->
+      <div class="rooms">
+        <p>Standard Room</p>
+        <small>
+          1 extra-large double bed
+          <img [src]="bedIcon">
+        </small>
+      </div>
+      <div class="person">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <p>+</p>
+        <img [src]="personIcon">
+      </div>
+      <div class="show-price-btn">
+        <button (click)="showPriceStardardRoom()">Show prices</button>
+      </div>
+      <!-- room-2  -->
+      <div class="rooms">
+        <p>Superior Room</p>
+        <small>
+          1 extra-large double bed
+          <img [src]="bedIcon">
+        </small>
+      </div>
+      <div class="person">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <p>+</p>
+        <img [src]="personIcon">
+      </div>
+      <div class="show-price-btn">
+        <button (click)="showPriceSuperiorRoom()">Show prices</button>
+      </div>
+      <!-- room-3  -->
+      <div class="rooms">
+        <p>Family Room</p>
+        <small>
+          2 extra-large double bed
+          <img [src]="bedIcon">
+        </small>
+      </div>
+      <div class="person">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <p>+</p>
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+      </div>
+      <div class="show-price-btn">
+        <button (click)="showFamilyRoom()">Show prices</button>
+      </div>
+      <!-- room-4  -->
+      <div class="rooms">
+        <p>Premium Room</p>
+        <small>
+          2 extra-large double bed
+          <img [src]="bedIcon">
+        </small>
+      </div>
+      <div class="person">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+        <p>+</p>
+        <img [src]="personIcon">
+        <img [src]="personIcon">
+
+      </div>
+      <div class="show-price-btn">
+        <button (click)="showPremiumRoom()">Show prices</button>
+      </div>
+    </div>
+  </div>
+  <div class="hotel-reservation" *ngIf="totalAmount">
+    <div class="reservation-container">
+      <div class="container-title">
+        <h3>Total Amount</h3>
+      </div>
+      <div class="container-price">
+        <div class="price-title">
+          <h3 [innerHTML]="showRoomStyle"></h3>
+          <h4 [innerHTML]="Days"></h4>
+        </div>
+        <div class="check-in-check-out">
+          <div class="check-in-box">
+            <p>Check-in : <span [innerHTML]="showCheckInTime"></span></p>
+          </div>
+          <div class="check-out-box">
+            <p>Check-out : <span [innerHTML]="showCheckOutTime"></span></p>
+          </div>
+        </div>
+        <div class="total-price">
+          <p [innerHTML]="showTotalPrice"></p>
+        </div>
+        <div class="pay-btn">
+          <button>Pay with Card</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
