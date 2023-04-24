@@ -6,6 +6,7 @@ import { HotelsMainPageComponent } from './hotels-main-page/hotels-main-page.com
 import { HotelPageComponent } from './hotel-page/hotel-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { OfferComponent } from './offer/offer.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path : 'adminpanel',
     component : HotelsPanelComponent
+  },
+  {
+    path : 'offerpage',
+    component : OfferComponent
   },
 ];
 

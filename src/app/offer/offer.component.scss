@@ -1,0 +1,118 @@
+.offer-main {
+  width: 100%;
+  min-height: 85vh;
+  background-color: #0c3144;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  padding: 40px 150px;
+  .summer-offer,
+  .winter-offer {
+    width: 100%;
+    min-height: 300px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: #77b2cf;
+    border-radius: 10px;
+    position: relative;
+    .sale-decore {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: flex;
+      flex-direction: row;
+      column-gap: 5px;
+      align-items: center;
+      p {
+        font-size: 25px;
+        color: #d80000;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .summer-offer-title,
+    .winter-offer-title {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      border-bottom: 0.5px solid #0c3144;
+      padding-bottom: 10px;
+      h3 {
+        font-size: 35px;
+        color: #0c3144;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.7px;
+      }
+    }
+    .summer-offer-about,
+    .winter-offer-about {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      column-gap: 20px;
+      border-radius: 10px;
+      .summer-offer-about-left,
+      .summer-offer-about-right,
+      .winter-offer-about-left,
+      .winter-offer-about-right {
+        width: auto;
+        height: auto;
+        padding: 4px 10px;
+        p {
+          color: #0c3144;
+          font-size: 18px;
+          font-family: Arial, Helvetica, sans-serif;
+          letter-spacing: 0.4px;
+        }
+      }
+    }
+    .summer-offer-list,
+    .winter-offer-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      p {
+        color: #0c3144;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        span {
+          color: #bc0000;
+          position: relative;
+          width: auto;
+          height: auto;
+          &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 15px;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transform: rotate(-18deg);
+          }
+        }
+      }
+    }
+  }
+  .winter-offer {
+    width: 100%;
+    min-height: 300px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}

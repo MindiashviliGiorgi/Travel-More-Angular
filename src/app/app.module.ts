@@ -14,7 +14,8 @@ import { HotelsMainPageComponent } from './hotels-main-page/hotels-main-page.com
 import { HotelPageComponent } from './hotel-page/hotel-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-import { CarouselComponent } from './carousel/carousel.component'
+import { CarouselComponent } from './carousel/carousel.component';
+import { OfferComponent } from './offer/offer.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CarouselComponent } from './carousel/carousel.component'
     HotelPageComponent,
     AboutPageComponent,
     ContactPageComponent,
-    CarouselComponent
+    CarouselComponent,
+    OfferComponent
   ],
   imports: [
     BrowserModule,
