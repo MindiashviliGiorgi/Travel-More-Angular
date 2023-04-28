@@ -1,4 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener } from '@angular/core';
+
+interface Hotel {
+  name: string;
+  star: number;
+  image: string;
+  location: string;
+}
 
 @Component({
   selector: 'app-hotels-main-page',
@@ -6,6 +13,35 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./hotels-main-page.component.scss']
 })
 export class HotelsMainPageComponent {
+
+
+  hotels: Hotel[] = [
+    {
+      name : 'Stamba Hotel',
+      star : 5,
+      image: '/assets/images/hot-hotel.jpeg',
+      location : 'Tbilisi,Georgia'
+    },
+    {
+      name : 'Kata Hotel',
+      star : 3,
+      image: '/assets/images/hotel.jpeg',
+      location : 'Gori,Georgia'
+    },
+    {
+      name : 'Redisson Hotel',
+      star : 5,
+      image: '/assets/images/hotel-big-room.jpg',
+      location : 'Kutaisi,Georgia'
+    },
+    {
+      name : 'Delise Hotel',
+      star : 5,
+      image: '/assets/images/hotel-gym.jpg',
+      location : 'Batumi,Georgia'
+    },
+  ]
+
   locationIcon:string = '/assets/images/location.png';
   searchIcon:string = '/assets/images/nav-search.png';
   starIcon:string = '/assets/images/star-icon.png';
@@ -40,9 +76,10 @@ export class HotelsMainPageComponent {
   scrollProgress(){
     document.documentElement.scrollTop = 0;
   };
-  
-  // scrollProgress.style.background = `conic-gradient(green ${scrollValue}%, white ${scrollValue}%)`;
 
+
+  searchValue:string = 'giorgi'
+   
 
 
 

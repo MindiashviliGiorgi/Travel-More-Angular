@@ -15,7 +15,11 @@ import { HotelPageComponent } from './hotel-page/hotel-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { OfferComponent } from './offer/offer.component'
+import { OfferComponent } from './offer/offer.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from './environments/environment.prod';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { OfferComponent } from './offer/offer.component'
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // AngularFireModule.initializeApp(environment.apiBaseUrl)
   ],
   providers: [],
   bootstrap: [AppComponent]

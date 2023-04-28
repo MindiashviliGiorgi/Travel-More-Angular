@@ -41,9 +41,9 @@
         <div class="hotels-data">
             <div class="hotels-container">
                 <ul (click)="openHotelInfo()" *ngFor="let user of userInfos">
-                    <li><p>{{user.id}}</p></li>
-                    <li><p>{{user.name}}</p></li>
-                    <li><p>{{user.username}}</p></li>
+                    <li><p>{{user.hotelName}}</p></li>
+                    <li><p>{{user.apiKey}}</p></li>
+                    <li><p>{{user.authDomain}}</p></li>
                     <li><p>20.08.2023</p></li>
                     <li class="edit-delete">
                         <p>Edit</p>
