@@ -7,6 +7,9 @@ import { HotelPageComponent } from './hotel-page/hotel-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { OfferComponent } from './offer/offer.component';
+import { FixregisterComponent } from './fixregister/fixregister.component';
+import { FixloginComponent } from './fixlogin/fixlogin.component';
+
 
 const routes: Routes = [
   {
@@ -29,6 +32,14 @@ const routes: Routes = [
     path : 'offerpage',
     component : OfferComponent
   },
+  {
+    path : 'fixlogin',
+    component : FixloginComponent
+  },
+  {
+    path : 'fixregister',
+    component : FixregisterComponent
+  }
 ];
 
 @NgModule({

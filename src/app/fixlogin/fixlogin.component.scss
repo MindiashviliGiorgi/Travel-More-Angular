@@ -1,0 +1,26 @@
+.fixlogin-main {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    .box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2px;
+    }
+    .valid {
+      padding: 4px 8px;
+      background-color: red;
+      color: #000;
+    }
+  }
+}

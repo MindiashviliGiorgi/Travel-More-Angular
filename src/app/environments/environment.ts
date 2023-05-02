@@ -1,4 +1,4 @@
 export const environment = {
     production : false,
-    apiBaseUrl : '/firebase.json'
+    apiBaseUrl : 'https://jsonplaceholder.typicode.com/users'
 }

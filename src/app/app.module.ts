@@ -16,8 +16,11 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { OfferComponent } from './offer/offer.component';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from './environments/environment.prod';
+import { FormsModule } from '@angular/forms';
+import { FixloginComponent } from './fixlogin/fixlogin.component';
+import { FixregisterComponent } from './fixregister/fixregister.component';
+
+
 
 
 
@@ -35,13 +38,15 @@ import { environment } from './environments/environment.prod';
     AboutPageComponent,
     ContactPageComponent,
     CarouselComponent,
-    OfferComponent
+    OfferComponent,
+    FixloginComponent,
+    FixregisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    // AngularFireModule.initializeApp(environment.apiBaseUrl)
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
