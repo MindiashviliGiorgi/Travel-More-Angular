@@ -3,31 +3,35 @@
     <div class="box">
       <label for="email">Email</label>
       <input type="email" id="email" name="email"
-        [(ngModel)]="form.email" #email="ngModel" required>
+        [(ngModel)]="form.email" #email="ngModel" required
+        placeholder="Email">
     </div>
 
     <div class="valid" *ngIf="email.invalid && (email.dirty || email.touched)">
-      Email field must be valid!
+      <p>Email field must be valid!</p>
     </div>
 
     <div class="box">
       <label for="password">Password</label>
       <input type="password" id="password" name="password"
-        [(ngModel)]="form.password" #password="ngModel" required>
+        [(ngModel)]="form.password" #password="ngModel" required 
+        placeholder="Password">
     </div>
 
     <div class="valid" *ngIf="password.invalid && (password.dirty || password.touched)">
-      Password field must be valid!
+      <p>Password field must be valid!</p>
     </div>
 
-    <button [disabled]="myForm.form.invalid" type="submit">
-      <ng-container *ngIf="isLoading">
-        Loading...
-      </ng-container>
-      <ng-container *ngIf="!isLoading">
-        Submit
-      </ng-container>
-    </button>
+    <div class="sbmt">
+      <button [disabled]="myForm.form.invalid" type="submit">
+        <ng-container *ngIf="isLoading()">
+          Loading...
+        </ng-container>
+        <ng-container *ngIf="!isLoading()">
+          Submit
+        </ng-container>
+      </button>
+    </div>
 
   </form>
 </div>

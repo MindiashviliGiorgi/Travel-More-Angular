@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 interface Hotel {
   name: string;
@@ -13,6 +14,12 @@ interface Hotel {
   styleUrls: ['./hotels-main-page.component.scss']
 })
 export class HotelsMainPageComponent {
+
+  constructor(private authService:AuthService){}
+
+  logout(){
+    
+  }
 
 
   hotels: Hotel[] = [
@@ -78,7 +85,8 @@ export class HotelsMainPageComponent {
   };
 
 
-  searchValue:string = 'giorgi'
+  searchValue:string = 'Search';
+
    
 
 

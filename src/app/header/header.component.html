@@ -13,12 +13,12 @@
         </ul>
     </div>
     <div class="header-right">
-        <div class="open-admin-panel" [routerLink]="'/adminpanel'">
+        <div class="open-admin-panel" [routerLink]="'/adminpanel'" *ngIf="isAuthenticated()">
             <img [src]="adminPanel">
             <h3>Admin Panel</h3>
         </div>
         <div class="logout-system">
-            <img [src]="myImg" [routerLink]="'/'">
+            <img [src]="myImg" (click)="signOut()">
         </div>
     </div>
 </div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { firebaseConfig } from './firebase.config';
 import { initializeApp } from 'firebase/app';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,10 @@ export class AppComponent implements OnInit {
     initializeApp(firebaseConfig);
   }
 
-  constructor(private router : Router){}
+  constructor(private authService : AuthService){}
 
+  isAuthenticated(){
+    return this.authService.isAuthenticated;
+  }
   
 }

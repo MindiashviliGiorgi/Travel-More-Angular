@@ -8,3 +8,10 @@ export interface RegisterForm {
   password : string;
   confirm_password : string;
 }
+export interface UserHotel {
+  name : string;
+  location : string;
+  stars : string;
+  amount : string;
+  image : string;
+}

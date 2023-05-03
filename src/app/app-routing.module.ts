@@ -9,6 +9,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { OfferComponent } from './offer/offer.component';
 import { FixregisterComponent } from './fixregister/fixregister.component';
 import { FixloginComponent } from './fixlogin/fixlogin.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   },
   {
     path : 'adminpanel',
-    component : HotelsPanelComponent
+    component : HotelsPanelComponent,
+    canActivate : [AuthGuard]
   },
   {
     path : 'offerpage',

@@ -19,6 +19,13 @@ import { OfferComponent } from './offer/offer.component';
 import { FormsModule } from '@angular/forms';
 import { FixloginComponent } from './fixlogin/fixlogin.component';
 import { FixregisterComponent } from './fixregister/fixregister.component';
+import { environment } from './environments/environment.prod';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
+
+
+
 
 
 
@@ -40,13 +47,14 @@ import { FixregisterComponent } from './fixregister/fixregister.component';
     CarouselComponent,
     OfferComponent,
     FixloginComponent,
-    FixregisterComponent
+    FixregisterComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,53 +2,48 @@
   <form action="" (ngSubmit)="submit()" #myForm="ngForm">
 
     <div class="box">
-      <label for="name">Name</label>
-      <input type="name" id="name" name="name"
-        [(ngModel)]="form.name" #name="ngModel" required>
-    </div>
-
-    <div class="valid" *ngIf="name.invalid && (name.dirty || name.touched)">
-      Name field must be valid!
-    </div>
-
-    <div class="box">
       <label for="email">Email</label>
       <input type="email" id="email" name="email"
-        [(ngModel)]="form.email" #email="ngModel" required>
+        [(ngModel)]="form.email" #email="ngModel" required
+        placeholder="Email">
     </div>
 
     <div class="valid" *ngIf="email.invalid && (email.dirty || email.touched)">
-      Email field must be valid!
+      <p>Email field must be valid!</p>
     </div>
 
     <div class="box">
       <label for="password">Password</label>
       <input type="password" id="password" name="password"
-        [(ngModel)]="form.password" #password="ngModel" required>
+        [(ngModel)]="form.password" #password="ngModel" required 
+        placeholder="Password">
     </div>
 
     <div class="valid" *ngIf="password.invalid && (password.dirty || password.touched)">
-      Password field must be valid!
+      <p>Password field must be valid!</p>
     </div>
 
     <div class="box">
       <label for="confirm_password">Confirm Password</label>
       <input type="password" id="confirm_password" name="confirm_password"
-        [(ngModel)]="form.confirm_password" #confirm_password="ngModel" required>
+        [(ngModel)]="form.confirm_password" #confirm_password="ngModel" required
+        placeholder="Confirm Password">
     </div>
 
     <div class="valid" *ngIf="confirm_password.invalid && (confirm_password.dirty || confirm_password.touched)">
-      Confirm password field must be valid!
+      <p>Confirm password field must be valid!</p>
     </div>
 
-    <button [disabled]="myForm.form.invalid" type="submit">
-      <ng-container *ngIf="isLoading">
-        Loading...
-      </ng-container>
-      <ng-container *ngIf="!isLoading">
-        Submit
-      </ng-container>
-    </button>
+    <div class="sbmt">
+      <button [disabled]="myForm.form.invalid" type="submit">
+        <ng-container *ngIf="isLoading()">
+          Loading...
+        </ng-container>
+        <ng-container *ngIf="!isLoading()">
+          Submit
+        </ng-container>
+      </button>
+    </div>
 
   </form>
 </div>

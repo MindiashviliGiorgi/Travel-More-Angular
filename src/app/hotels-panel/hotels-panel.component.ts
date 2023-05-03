@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
 import { TestService } from '../services/test.service';
 
+
 @Component({
   selector: 'app-hotels-panel',
   templateUrl: './hotels-panel.component.html',
   styleUrls: ['./hotels-panel.component.scss']
 })
 export class HotelsPanelComponent {
+
+
+
+
+
+  ngOnInit():void {}
+
+  
+
+
+
+
+
+
+
 
   showAddNewWindow:any = false;
 
@@ -35,21 +51,21 @@ export class HotelsPanelComponent {
   hotelImg:string = '/assets/images/hotel.jpeg';
 
 
-  userInfos : any = [];
+  // userInfos : any = [];
 
-  constructor(private testService : TestService){
+  // constructor(private testService : TestService){
 
-  }
+  // }
 
-  ngOnInit() : void {
-    this.getAllUsers();
-  }
-  getAllUsers(){
-    this.testService.getAllUsers().subscribe((res)=>{
-      this.userInfos = res;
-      console.log(res)
-    })
-  }
+  // ngOnInit() : void {
+  //   this.getAllUsers();
+  // }
+  // getAllUsers(){
+  //   this.testService.getAllUsers().subscribe((res)=>{
+  //     this.userInfos = res;
+  //     console.log(res)
+  //   })
+  // }
   
 
 }

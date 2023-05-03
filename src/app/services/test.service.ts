@@ -8,10 +8,10 @@ import { environment } from "../environments/environment.prod";
 })
 
 export class TestService {
-    constructor(private http : HttpClient){
+    // constructor(private http : HttpClient){
 
-    }
-    getAllUsers(): Observable<any>{
-        return this.http.get<any>(`${environment.apiBaseUrl}`)
-    }
+    // }
+    // getAllUsers(): Observable<any>{
+    //     return this.http.get<any>(`${environment.firebaseConfig}`)
+    // }
 }
