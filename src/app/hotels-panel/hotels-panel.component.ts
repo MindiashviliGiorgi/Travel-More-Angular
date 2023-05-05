@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { TestService } from '../services/test.service';
+import { HotelForm } from '../auth/auth';
+import { AuthService } from '../auth.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 
 @Component({
@@ -9,13 +14,56 @@ import { TestService } from '../services/test.service';
 })
 export class HotelsPanelComponent {
 
+  form: HotelForm = {
+    name : '',
+    adress : '',
+    image  : '',
+    payment : '',
+    city : '',
+    stars : 0,
+    info : '',
+  };
+
+  constructor(private http : HttpClient){}
+
+  allHotels: HotelForm[] = [];
 
 
 
+  ngOnInit():void {
+    this.fetchHotels(); 
+  }
 
-  ngOnInit():void {}
+  onFetchHotels(){
+    this.fetchHotels(); 
+  }
 
-  
+  hCreate(form:HotelForm){
+    this.onFetchHotels();
+    this.showAddNewWindow = false;
+    const headers = new HttpHeaders({'myHeader' : 'hotelHeader'})
+    this.http.post<{name: string}>('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/hotels.json', form, {headers : headers})
+    .subscribe((res)=>{
+
+    })
+  }
+
+  private fetchHotels(){
+    this.http.get<{[key: string]: HotelForm}>('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/hotels.json')
+    .pipe(map((res) => {
+      const hotels = [];
+      for(const key in res){
+        if(res.hasOwnProperty(key)){
+          hotels.push({...res[key], id: key})
+        }
+      }
+      return hotels;
+    }))
+    .subscribe((hotels) => {
+      console.log(hotels);
+      this.allHotels = hotels;
+    })
+  }
 
 
 

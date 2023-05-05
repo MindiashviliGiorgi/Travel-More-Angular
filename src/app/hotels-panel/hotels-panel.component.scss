@@ -38,14 +38,15 @@
                 }
                 .new-items {
                     button {
-                        width: 67px;
-                        height: 23px;
+                        width: auto;
+                        height: 40px;
                         background-color: #061e2b;
                         font-weight: 400;
                         color: #DFE9F4;
                         border-radius: 4px;
                         font-size: 12px;
                         line-height: 14px;
+                        padding: 4px 10px;
                         border: none;
                         outline: none;
                         cursor: pointer;
@@ -103,11 +104,12 @@
                 }
                 .add-btn {
                     button {
-                        width: 91px;
+                        width: 150px;
                         height: 40px;
                         background-color: #061e2b;
                         font-weight: 800;
                         border-radius: 4px;
+                        padding: 4px 10px;
                         border: none;
                         outline: none;
                         cursor: pointer;

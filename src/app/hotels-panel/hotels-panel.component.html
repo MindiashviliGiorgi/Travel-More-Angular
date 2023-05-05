@@ -9,7 +9,7 @@
                     <h3>Hotels list</h3>
                 </div>
                 <div class="new-items">
-                    <button>New Items</button>
+                    <button (click)="onFetchHotels()">Fetch New Hotel</button>
                 </div>
             </div>
             <div class="hotels-top-right">
@@ -25,7 +25,7 @@
                     <img [src]="decoreIcon">
                 </div>
                 <div class="add-btn">
-                    <button (click)="addNewHotel()">Add new</button>
+                    <button (click)="addNewHotel()">Add New Hotel</button>
                 </div>
             </div>
         </div>
@@ -40,10 +40,10 @@
         </div>
         <div class="hotels-data">
             <div class="hotels-container">
-                <ul (click)="openHotelInfo()">
-                    <li><p></p></li>
-                    <li><p></p></li>
-                    <li><p></p></li>
+                <ul (click)="openHotelInfo()" *ngFor="let hotel of allHotels; index as i">
+                    <li><p>{{i + 1}}</p></li>
+                    <li><p>{{hotel.name}}</p></li>
+                    <li><p>{{hotel.adress}}</p></li>
                     <li><p>20.08.2023</p></li>
                     <li class="edit-delete">
                         <p>Edit</p>
@@ -56,7 +56,7 @@
 </div>
 <div class="add-new-window" *ngIf="showAddNewWindow">
     <div class="container">
-        <form action="">
+        <form #hotelForm="ngForm" (ngSubmit)="hCreate(form)">
             <div class="title">
                 <h1>Add Hotel</h1>
                 <img [src]="closeIcon" (click)="closeAddNewHotel()">
@@ -65,19 +65,23 @@
                 <div class="set-left">
                     <div class="name">
                         <label for="name">Name</label>
-                        <input type="name">
+                        <input type="name" name="name" ngModel
+                        [(ngModel)]="form.name">
                     </div>
                     <div class="address">
                         <label for="address">Address</label>
-                        <input type="text">
+                        <input type="text" name="adress" ngModel
+                        [(ngModel)]="form.adress">
                     </div>
                     <div class="profPic">
-                        <label for="profPic">Prof Picture</label>
-                        <input type="file">
+                        <label for="image">Prof Picture</label>
+                        <input type="file" name="image" ngModel
+                        [(ngModel)]="form.image">
                     </div>
                     <div class="payment">
                         <label for="payment">Payment</label>
-                        <select name="payment" id="payment">
+                        <select name="payment" id="payment" ngModel
+                        [(ngModel)]="form.payment">
                             <option value="cash">Cash</option>
                             <option value="card">Card</option>
                         </select>
@@ -86,11 +90,13 @@
                 <div class="set-right">
                     <div class="city">
                         <label for="city">City</label>
-                        <input type="text">
+                        <input type="text" name="city" ngModel
+                        [(ngModel)]="form.city">
                     </div>
                     <div class="stars">
                         <label for="stars">Stars</label>
-                        <select name="stars" id="stars">
+                        <select name="stars" id="stars" ngModel
+                        [(ngModel)]="form.stars">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -100,7 +106,11 @@
                     </div>
                     <div class="about-hotel">
                         <label for="info">About Hotel</label>
-                        <textarea name="info" id="info" cols="57" rows="5"></textarea>
+                        <textarea name="info" id="info" 
+                        cols="57" rows="5"
+                        ngModel
+                        [(ngModel)]="form.info"
+                        ></textarea>
                     </div>
                 </div>
             </div>
@@ -116,29 +126,29 @@
     <div class="container">
         <div class="container-up">
             <div class="up-left">
-                <img [src]="hotelImg">
+                <img [src]=''>
             </div>
-            <div class="up-right">
+            <div class="up-right"  *ngFor="let hotel of allHotels">
                 <div class="name">
-                    <!-- <h1>Clarion Hotel Amaranten</h1> -->
+                    {{hotel.name}}
                     <h1></h1>
                 </div>
                 <div class="address">
-                    <p>Address: </p>
+                    <p>Address: {{hotel.adress}}</p>
                 </div>
                 <div class="city">
-                    <p>City: </p>
+                    <p>City: {{hotel.city}}</p>
                 </div>
                 <div class="stars">
-                    <p>Stars: 5</p>
+                    <p>Stars: {{hotel.stars}}</p>
                 </div>
                 <div class="payment">
-                    <p>Payment: Cash/Card</p>
+                    <p>Payment: {{hotel.payment}}</p>
                 </div>
             </div>
         </div>
         <div class="container-down">
-            <textarea name="hotelinfo" id="hotelinfo" cols="83" rows="5">About Hotel...</textarea>
+            <textarea name="hotelinfo" id="hotelinfo" cols="83" rows="5"></textarea>
         </div>
         <div class="container-btn">
             <button (click)="closeHotelInfo()">Cancel</button>

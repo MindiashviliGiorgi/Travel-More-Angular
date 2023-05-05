@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { LoginForm, RegisterForm } from './auth/auth';
+import { HotelForm, LoginForm, RegisterForm } from './auth/auth';
 import { Route, Router } from '@angular/router';
 
 @Injectable({
@@ -13,6 +13,9 @@ export class AuthService {
   passwordMatched:boolean = true;
 
   constructor(private router : Router) {}
+
+
+
 
   login(form:LoginForm){
     if(this.isLoading) return;
