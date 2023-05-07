@@ -19,7 +19,11 @@
                     <img [src]="selectIcon">
                 </div>
                 <div class="search">
-                    <input type="search" name="search" id="search">
+                    <input type="search" name="search" id="search" 
+                    [(ngModel)]="enteredSearchValue"
+                    (input)="onSearchTextChanged()"
+                    placeholder="Search"
+                    >
                     <img [src]="searchIcon">
                 </div>
                 <div class="decoration">
@@ -41,15 +45,17 @@
         </div>
         <div class="hotels-data">
             <div class="hotels-container">
-                <ul *ngFor="let hotel of allHotels; index as i">
-                    <li><p>{{i + 1}}</p></li>
-                    <li><p>{{hotel.name}}</p></li>
-                    <li><p>{{hotel.stars}}</p></li>
-                    <li><p>20.08.2023</p></li>
-                    <li class="edit-delete">
-                        <!-- <p class="edit" (click)="editHotel(hotel.id)">Edit</p> -->
-                        <p class="delete" (click)="deleteHotel(hotel.id)">Delete</p>
-                    </li>
+                <ul *ngFor="let hotel of allHotels; index as i; " (click)="openHotelInfo(hotel.id)">
+                    <div class="test" *ngIf="enteredSearchValue === '' || hotel.name.toLowerCase().includes(enteredSearchValue)">
+                        <li><p>{{i + 1}}</p></li>
+                        <li><p>{{hotel.name}}</p></li>
+                        <li><p>{{hotel.stars}}</p></li>
+                        <li><p>20.08.2023</p></li>
+                        <li class="edit-delete">
+                            <!-- <p class="edit" (click)="editHotel(hotel.id)">Edit</p> -->
+                            <p class="delete" (click)="deleteHotel(hotel.id)">Delete</p>
+                        </li>
+                    </div>
                 </ul>
                 <li class="no-hotels" *ngIf="allHotels.length < 1">No Hotels Available!</li>
             </div>
@@ -133,20 +139,19 @@
             </div>
             <div class="up-right"  *ngFor="let hotel of allHotels">
                 <div class="name">
-                    {{hotel.name}}
-                    <h1></h1>
+                    <h1>{{hotel[0].name}}</h1>
                 </div>
                 <div class="address">
-                    <p>Address: {{hotel.adress}}</p>
+                    <p>Address: {{hotel[0].adress}}</p>
                 </div>
                 <div class="city">
-                    <p>City: {{hotel.city}}</p>
+                    <p>City: {{hotel[0].city}}</p>
                 </div>
                 <div class="stars">
-                    <p>Stars: {{hotel.stars}}</p>
+                    <p>Stars: {{hotel[0].stars}}</p>
                 </div>
                 <div class="payment">
-                    <p>Payment: {{hotel.payment}}</p>
+                    <p>Payment: {{hotel[0].payment}}</p>
                 </div>
             </div>
         </div>

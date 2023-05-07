@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { HotelForm } from '../auth/auth';
 import { NgForm } from '@angular/forms';
 import { HotelsService } from '../services/hotels.service';
@@ -22,11 +22,13 @@ export class HotelsPanelComponent {
     info : '',
   };
 
+
   // @ViewChild('hotelFform') newForm : NgForm | undefined;
 
   constructor(private hotelService:HotelsService){}
 
   allHotels: HotelForm[] = [];
+
 
   
 
@@ -57,14 +59,7 @@ export class HotelsPanelComponent {
     this.hotelService.deleteAllHotel();
   }
 
-  // editHotel(id:string){
-  //   let currentHotel = this.allHotels.find((p) => {
-  //     return p.id === id
-  //   })
-  //   console.log(this.newForm)
-  // }
 
-  
 
 
 
@@ -80,7 +75,7 @@ export class HotelsPanelComponent {
 
   hotelsInfo:any = false;
 
-  openHotelInfo(){
+  openHotelInfo(id:string){
     this.hotelsInfo = true;
   }
   closeHotelInfo(){
@@ -97,4 +92,16 @@ export class HotelsPanelComponent {
 
 
 
+
+  enteredSearchValue:string = '';
+
+
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+
+  onSearchTextChanged(){
+    this.searchTextChanged.emit(this.enteredSearchValue)
+    console.log(this.enteredSearchValue)
+  }
 }

@@ -3,8 +3,14 @@
     <div class="sort"  [class.header_change]="header_variable">
         <div class="sort-locations">
             <img [src]="locationIcon">
-            <select name="locations">
-                <option value="kartli">Kartli</option>
+            <select name="locations"
+            [(ngModel)]="searchLocationValue"
+            (input)="searchLocationF()"
+            >
+                <option value="">Georgia</option>
+                <option value="tbilisi">Tbilisi</option>
+                <option value="kutaisi">Kutaisi</option>
+                <option value="gori">Gori</option>
                 <option value="kakheti">Kakheti</option>
                 <option value="imereti">Imereti</option>
                 <option value="guria">Guria</option>
@@ -20,47 +26,60 @@
         </div>
         <div class="sort-search">
             <img [src]="searchIcon">
-            <input type="text" [value]="searchValue"/>
+            <input type="text"
+            [(ngModel)]="searchValue"
+            (input)="searchHotel()"
+            placeholder="Search"
+            />
         </div>
         <div class="star-search">
             <p>Search by stars :</p>
             <img [src]="starIcon">
-            <select name="stars">
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-                <option value="2">2</option>
+            <select name="stars"
+            [(ngModel)]="searchStarsValue"
+            (input)="searchByStars()"
+            >
+                <option value="">All</option>
                 <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
         </div>
     </div>
     <div class="hotels-containers-main"  [class.hotels_change]="hotels_variable">
         
         <ng-container *ngFor="let hotel of hotels">
-                <div class="container">
-                    <div class="hotel-img">
-                        <img [src]="hotel.image">
-                    </div>
-                    <div class="container-info">
-                        <div class="title">
-                            <h2>{{hotel.name}}</h2>
+            <ng-container *ngIf="searchLocationValue === '' || hotel.location.toLowerCase().includes(searchLocationValue)">
+                <ng-container *ngIf="searchStarsValue === '' || hotel.star.toLowerCase().includes(searchStarsValue)">               
+                    <div class="container"
+                    *ngIf="searchValue === '' || hotel.name.toLowerCase().includes(searchValue)">
+                        <div class="hotel-img">
+                            <img [src]="hotel.image">
                         </div>
-                        <div class="hotel-location">
-                            <img [src]="locationIcon">
-                            <p>{{hotel.location}}</p>
-                        </div>
-                        <div class="hotel-stars">
-                            <div class="stars">
-                                <img [src]="starIcon">
-                                <p>{{hotel.star}}</p>
+                        <div class="container-info">
+                            <div class="title">
+                                <h2>{{hotel.name}}</h2>
                             </div>
-                            <div class="next-page" [routerLink]="'/hotelpage'">
-                                <p>Total information</p>
-                                <img [src]="nextPage">
+                            <div class="hotel-location">
+                                <img [src]="locationIcon">
+                                <p>{{hotel.location}}</p>
+                            </div>
+                            <div class="hotel-stars">
+                                <div class="stars">
+                                    <img [src]="starIcon">
+                                    <p>{{hotel.star}}</p>
+                                </div>
+                                <div class="next-page" [routerLink]="'/hotelpage'">
+                                    <p>Total information</p>
+                                    <img [src]="nextPage">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </ng-container> 
+            </ng-container>
         </ng-container>
 
     </div>

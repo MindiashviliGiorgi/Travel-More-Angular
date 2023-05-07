@@ -3,7 +3,7 @@ import { AuthService } from '../auth.service';
 
 interface Hotel {
   name: string;
-  star: number;
+  star: string;
   image: string;
   location: string;
 }
@@ -25,29 +25,72 @@ export class HotelsMainPageComponent {
   hotels: Hotel[] = [
     {
       name : 'Stamba Hotel',
-      star : 5,
+      star : '5',
       image: '/assets/images/hot-hotel.jpeg',
       location : 'Tbilisi,Georgia'
     },
     {
       name : 'Kata Hotel',
-      star : 3,
+      star : '4',
       image: '/assets/images/hotel.jpeg',
       location : 'Gori,Georgia'
     },
     {
-      name : 'Redisson Hotel',
-      star : 5,
+      name : 'Luxury Hotel',
+      star : '3',
       image: '/assets/images/hotel-big-room.jpg',
       location : 'Kutaisi,Georgia'
     },
     {
-      name : 'Delise Hotel',
-      star : 5,
+      name : 'Sparrow Hotel',
+      star : '2',
       image: '/assets/images/hotel-gym.jpg',
       location : 'Batumi,Georgia'
     },
-  ]
+    {
+      name : 'Luxury Hotel',
+      star : '3',
+      image: '/assets/images/hotel-big-room.jpg',
+      location : 'Kutaisi,Georgia'
+    },
+    {
+      name : 'Stamba Hotel',
+      star : '5',
+      image: '/assets/images/hot-hotel.jpeg',
+      location : 'Tbilisi,Georgia'
+    },
+    {
+      name : 'Sparrow Hotel',
+      star : '2',
+      image: '/assets/images/hotel-gym.jpg',
+      location : 'Batumi,Georgia'
+    },
+    {
+      name : 'Luxury Hotel',
+      star : '3',
+      image: '/assets/images/hotel-big-room.jpg',
+      location : 'Kutaisi,Georgia'
+    },
+    {
+      name : 'Stamba Hotel',
+      star : '5',
+      image: '/assets/images/hot-hotel.jpeg',
+      location : 'Tbilisi,Georgia'
+    },
+    {
+      name : 'Sparrow Hotel',
+      star : '2',
+      image: '/assets/images/hotel-gym.jpg',
+      location : 'Batumi,Georgia'
+    },
+    {
+      name : 'Luxury Hotel',
+      star : '3',
+      image: '/assets/images/hotel-big-room.jpg',
+      location : 'Kutaisi,Georgia'
+    },
+  ];
+
 
   locationIcon:string = '/assets/images/location.png';
   searchIcon:string = '/assets/images/nav-search.png';
@@ -85,9 +128,24 @@ export class HotelsMainPageComponent {
   };
 
 
-  searchValue:string = 'Search';
+  searchValue:string = '';
+  searchLocationValue:string = '';
+  searchStarsValue:string = '';
 
-   
+  searchTextChange : EventEmitter<string> = new EventEmitter<string>();
+  searchHotel(){
+    this.searchTextChange.emit(this.searchValue)
+  }
+
+  searchLocation : EventEmitter<string> = new EventEmitter<string>();
+  searchLocationF(){
+    this.searchLocation.emit(this.searchLocationValue)
+  }
+
+  searchStars : EventEmitter<string> = new EventEmitter<string>();
+  searchByStars(){
+    this.searchStars.emit(this.searchStarsValue)
+  }
 
 
 
