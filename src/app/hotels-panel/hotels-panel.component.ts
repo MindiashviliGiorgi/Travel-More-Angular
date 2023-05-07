@@ -1,11 +1,7 @@
-import { Component } from '@angular/core';
-import { TestService } from '../services/test.service';
+import { Component, ViewChild } from '@angular/core';
 import { HotelForm } from '../auth/auth';
-import { AuthService } from '../auth.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
-
+import { NgForm } from '@angular/forms';
+import { HotelsService } from '../services/hotels.service';
 
 @Component({
   selector: 'app-hotels-panel',
@@ -14,7 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class HotelsPanelComponent {
 
-  form: HotelForm = {
+  @ViewChild('itsForm') itsForm : NgForm;
+
+  form : HotelForm = {
     name : '',
     adress : '',
     image  : '',
@@ -24,11 +22,13 @@ export class HotelsPanelComponent {
     info : '',
   };
 
-  constructor(private http : HttpClient){}
+  // @ViewChild('hotelFform') newForm : NgForm | undefined;
+
+  constructor(private hotelService:HotelsService){}
 
   allHotels: HotelForm[] = [];
 
-
+  
 
   ngOnInit():void {
     this.fetchHotels(); 
@@ -39,35 +39,32 @@ export class HotelsPanelComponent {
   }
 
   hCreate(form:HotelForm){
-    this.onFetchHotels();
+    this.hotelService.createHotel(form);
     this.showAddNewWindow = false;
-    const headers = new HttpHeaders({'myHeader' : 'hotelHeader'})
-    this.http.post<{name: string}>('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/hotels.json', form, {headers : headers})
-    .subscribe((res)=>{
-
-    })
   }
 
   private fetchHotels(){
-    this.http.get<{[key: string]: HotelForm}>('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/hotels.json')
-    .pipe(map((res) => {
-      const hotels = [];
-      for(const key in res){
-        if(res.hasOwnProperty(key)){
-          hotels.push({...res[key], id: key})
-        }
-      }
-      return hotels;
-    }))
-    .subscribe((hotels) => {
-      console.log(hotels);
+    this.hotelService.fetchHotel().subscribe((hotels) => {
       this.allHotels = hotels;
     })
   }
 
+  deleteHotel(id: string){
+    this.hotelService.deleteHotel(id);
+  }
 
+  deleteAllHotel(){
+    this.hotelService.deleteAllHotel();
+  }
 
+  // editHotel(id:string){
+  //   let currentHotel = this.allHotels.find((p) => {
+  //     return p.id === id
+  //   })
+  //   console.log(this.newForm)
+  // }
 
+  
 
 
 
@@ -99,21 +96,5 @@ export class HotelsPanelComponent {
   hotelImg:string = '/assets/images/hotel.jpeg';
 
 
-  // userInfos : any = [];
-
-  // constructor(private testService : TestService){
-
-  // }
-
-  // ngOnInit() : void {
-  //   this.getAllUsers();
-  // }
-  // getAllUsers(){
-  //   this.testService.getAllUsers().subscribe((res)=>{
-  //     this.userInfos = res;
-  //     console.log(res)
-  //   })
-  // }
-  
 
 }

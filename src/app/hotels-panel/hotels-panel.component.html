@@ -9,7 +9,8 @@
                     <h3>Hotels list</h3>
                 </div>
                 <div class="new-items">
-                    <button (click)="onFetchHotels()">Fetch New Hotel</button>
+                    <button style="margin-right: 30px;" (click)="onFetchHotels()">Fetch New Hotel</button>
+                    <button (click)="deleteAllHotel()">Delete All Hotels</button>
                 </div>
             </div>
             <div class="hotels-top-right">
@@ -18,7 +19,7 @@
                     <img [src]="selectIcon">
                 </div>
                 <div class="search">
-                    <input type="search" name="search" id="search" [placeholder]="searchPlc">
+                    <input type="search" name="search" id="search">
                     <img [src]="searchIcon">
                 </div>
                 <div class="decoration">
@@ -40,23 +41,24 @@
         </div>
         <div class="hotels-data">
             <div class="hotels-container">
-                <ul (click)="openHotelInfo()" *ngFor="let hotel of allHotels; index as i">
+                <ul *ngFor="let hotel of allHotels; index as i">
                     <li><p>{{i + 1}}</p></li>
                     <li><p>{{hotel.name}}</p></li>
-                    <li><p>{{hotel.adress}}</p></li>
+                    <li><p>{{hotel.stars}}</p></li>
                     <li><p>20.08.2023</p></li>
                     <li class="edit-delete">
-                        <p>Edit</p>
-                        <p>Delete</p>
+                        <!-- <p class="edit" (click)="editHotel(hotel.id)">Edit</p> -->
+                        <p class="delete" (click)="deleteHotel(hotel.id)">Delete</p>
                     </li>
                 </ul>
+                <li class="no-hotels" *ngIf="allHotels.length < 1">No Hotels Available!</li>
             </div>
         </div>
     </div>
 </div>
 <div class="add-new-window" *ngIf="showAddNewWindow">
     <div class="container">
-        <form #hotelForm="ngForm" (ngSubmit)="hCreate(form)">
+        <form (ngSubmit)="hCreate(form)" #hotelFform="ngForm">
             <div class="title">
                 <h1>Add Hotel</h1>
                 <img [src]="closeIcon" (click)="closeAddNewHotel()">
@@ -66,22 +68,22 @@
                     <div class="name">
                         <label for="name">Name</label>
                         <input type="name" name="name" ngModel
-                        [(ngModel)]="form.name">
+                        [(ngModel)]="form.name"  #name="ngModel">
                     </div>
                     <div class="address">
                         <label for="address">Address</label>
                         <input type="text" name="adress" ngModel
-                        [(ngModel)]="form.adress">
+                        [(ngModel)]="form.adress" #adress="ngModel">
                     </div>
                     <div class="profPic">
                         <label for="image">Prof Picture</label>
                         <input type="file" name="image" ngModel
-                        [(ngModel)]="form.image">
+                        [(ngModel)]="form.image" #image="ngModel">
                     </div>
                     <div class="payment">
                         <label for="payment">Payment</label>
                         <select name="payment" id="payment" ngModel
-                        [(ngModel)]="form.payment">
+                        [(ngModel)]="form.payment" #payment="ngModel">
                             <option value="cash">Cash</option>
                             <option value="card">Card</option>
                         </select>
@@ -91,12 +93,12 @@
                     <div class="city">
                         <label for="city">City</label>
                         <input type="text" name="city" ngModel
-                        [(ngModel)]="form.city">
+                        [(ngModel)]="form.city" #city="ngModel">
                     </div>
                     <div class="stars">
                         <label for="stars">Stars</label>
                         <select name="stars" id="stars" ngModel
-                        [(ngModel)]="form.stars">
+                        [(ngModel)]="form.stars" #stars="ngModel">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -110,6 +112,7 @@
                         cols="57" rows="5"
                         ngModel
                         [(ngModel)]="form.info"
+                        #info="ngModel"
                         ></textarea>
                     </div>
                 </div>
