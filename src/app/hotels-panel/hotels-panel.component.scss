@@ -152,6 +152,9 @@
                 width: 100%;
                 height: auto;
                 padding: 10px 40px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 90px;
                 .no-hotels {
                     margin-top: 40px;
                     list-style: none;
@@ -174,13 +177,7 @@
                     &:hover {
                         background-color: #e8e8e8;
                     }
-                    .test {
-                        display: flex;
-                        flex-direction: row;
-                        column-gap: 120px;
-                        align-items: center;
-                        width: 100%;
-                        height: auto;
+
                         .edit-delete {
                             display: flex;
                             align-items: center;
@@ -190,6 +187,12 @@
                         li {
                             list-style: none;
                             width: 101px;
+                            display: flex;
+                            flex-direction: row;
+                            column-gap: 120px;
+                            align-items: center;
+                            width: 100%;
+                            height: auto;
                             .editDelete {
                                 display: flex;
                                 align-items: center;
@@ -218,7 +221,7 @@
                                 }
                             }
                         }
-                    }
+                    
                 }
             }
         }

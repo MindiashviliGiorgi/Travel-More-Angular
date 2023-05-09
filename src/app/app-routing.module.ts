@@ -10,6 +10,7 @@ import { OfferComponent } from './offer/offer.component';
 import { FixregisterComponent } from './fixregister/fixregister.component';
 import { FixloginComponent } from './fixlogin/fixlogin.component';
 import { AuthGuard } from './auth/auth.guard';
+import { BookingComponent } from './booking/booking.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path : 'hotelpage',
     component : HotelPageComponent
+  },
+  {
+    path : 'aboutproject',
+    component : AboutPageComponent
   },
   {
     path : 'adminpanel',
@@ -41,6 +46,10 @@ const routes: Routes = [
   {
     path : 'fixregister',
     component : FixregisterComponent
+  },
+  {
+    path : 'booking',
+    component : BookingComponent
   }
 ];
 

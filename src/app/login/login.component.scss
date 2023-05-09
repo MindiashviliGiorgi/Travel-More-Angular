@@ -34,6 +34,70 @@
             }
         }
     }
+    .join-for-guest {
+        position: absolute;
+        top: 40%;
+        right: 20px;
+        .join-container {
+            width: 250px;
+            height: 220px;
+            border-radius: 15px;
+            background-color: #DFE9F4;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 10px 10px;
+            .jc-title {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                color: #054C7C;
+                h3 {
+                    font-size: 30px;
+                }
+            }
+            .jc-about {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                color: #054C7C;
+                p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 19px;
+                    font-weight: 500;
+                    letter-spacing: 0.3px;
+                }
+            }
+            .jc-button {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                button {
+                    padding: 5px 18px;
+                    border-radius: 19px;
+                    outline: none;
+                    border: none;
+                    background-color: #054C7C;
+                    color: #DFE9F4;
+                    cursor: pointer;
+                    font-size: 17px;
+                    transition: 0.2s;
+                    letter-spacing: 2px;
+                    &:hover {
+                        background-color: #0b6b9e;
+                        transition: 0.2s;
+                    }
+                    &:active {
+                        background-color: #054C73;
+                        transition: 0s;
+                    }
+                }
+            }
+        }
+    }
     .container-main {
         width: 900px;
         height: auto;

@@ -21,12 +21,8 @@ import { FixloginComponent } from './fixlogin/fixlogin.component';
 import { FixregisterComponent } from './fixregister/fixregister.component';
 import { environment } from './environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
-
-
-
-
-
-
+import { BookingComponent } from './booking/booking.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 
@@ -47,13 +43,15 @@ import { AngularFireModule } from '@angular/fire/compat';
     OfferComponent,
     FixloginComponent,
     FixregisterComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

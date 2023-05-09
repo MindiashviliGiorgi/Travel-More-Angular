@@ -45,8 +45,8 @@
         </div>
         <div class="hotels-data">
             <div class="hotels-container">
-                <ul *ngFor="let hotel of allHotels; index as i; " (click)="openHotelInfo(hotel.id)">
-                    <div class="test" *ngIf="enteredSearchValue === '' || hotel.name.toLowerCase().includes(enteredSearchValue)">
+                <ul *ngFor="let hotel of allHotels; index as i; " >
+                    <ng-container *ngIf="enteredSearchValue === '' || hotel.name.toLowerCase().includes(enteredSearchValue)">
                         <li><p>{{i + 1}}</p></li>
                         <li><p>{{hotel.name}}</p></li>
                         <li><p>{{hotel.stars}}</p></li>
@@ -55,7 +55,7 @@
                             <!-- <p class="edit" (click)="editHotel(hotel.id)">Edit</p> -->
                             <p class="delete" (click)="deleteHotel(hotel.id)">Delete</p>
                         </li>
-                    </div>
+                    </ng-container>
                 </ul>
                 <li class="no-hotels" *ngIf="allHotels.length < 1">No Hotels Available!</li>
             </div>
