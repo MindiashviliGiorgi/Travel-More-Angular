@@ -18,3 +18,10 @@ export interface HotelForm {
   info : string;
   id?: string;
 }
+
+export interface BookingForm {
+  title : string;
+  start : string;
+  end : string;
+  room : string;
+}

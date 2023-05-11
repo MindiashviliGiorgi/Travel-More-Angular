@@ -1,6 +1,43 @@
 <app-header></app-header>
 <div class="booking-main">
-  <full-calendar defaultView="dayGridMonth"></full-calendar>
+  <button (click)="openBookingSystem = true">Book Your Travel</button>
+  <full-calendar class="full-calendar" [options]="calendarOptions" [events]="events"></full-calendar>
+  <div class="alert-booking" *ngIf="openBookingSystem">
+    <div class="add-booking-item">
+      <div class="title">
+        <h2>Booking System</h2>
+      </div>
+      <div class="booking-form">
+        <form>
+          <div class="box">
+            <label for="name">Your Name</label>
+            <input type="name" name="title" [(ngModel)]="bookingForm.title">
+          </div>
+  
+          <div class="box">
+            <label for="date">Start Date</label>
+            <input type="date" name="start" [(ngModel)]="bookingForm.start">
+          </div>
+  
+          <div class="box">
+            <label for="date">End Date</label>
+            <input type="date" name="end" [(ngModel)]="bookingForm.end">
+          </div>
 
+          <div class="box">
+            <label for="text">Room Name</label>
+            <input type="text" name="room" [(ngModel)]="bookingForm.room">
+          </div>
+
+          <div class="btns-box">
+            <button (click)="openBookingSystem = false">
+              Cancel
+            </button>
+            <input type="submit" (click)="onSubmit(bookingForm)">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
