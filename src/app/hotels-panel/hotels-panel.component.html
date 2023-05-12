@@ -39,7 +39,7 @@
                 <li><p>#</p></li>
                 <li><p>Name</p></li>
                 <li><p>Stars</p></li>
-                <li><p>Registration date</p></li>
+                <li><p>Location</p></li>
                 <li><p>Action</p></li>
             </ul>
         </div>
@@ -50,9 +50,9 @@
                         <li><p>{{i + 1}}</p></li>
                         <li><p>{{hotel.name}}</p></li>
                         <li><p>{{hotel.stars}}</p></li>
-                        <li><p>20.08.2023</p></li>
+                        <li><p>{{hotel.city}}</p></li>
                         <li class="edit-delete">
-                            <!-- <p class="edit" (click)="editHotel(hotel.id)">Edit</p> -->
+                            <p class="edit" (click)="hotelsInfo = true">Open</p>
                             <p class="delete" (click)="deleteHotel(hotel.id)">Delete</p>
                         </li>
                     </ng-container>
@@ -135,23 +135,23 @@
     <div class="container">
         <div class="container-up">
             <div class="up-left">
-                <img [src]=''>
+                <img [src]='hotelImg'>
             </div>
             <div class="up-right"  *ngFor="let hotel of allHotels">
                 <div class="name">
-                    <h1>{{hotel[0].name}}</h1>
+                    <h1>{{hotel.id}}</h1>
                 </div>
                 <div class="address">
-                    <p>Address: {{hotel[0].adress}}</p>
+                    <p>Address: {{hotel.id}}</p>
                 </div>
                 <div class="city">
-                    <p>City: {{hotel[0].city}}</p>
+                    <p>City: {{hotel.id}}</p>
                 </div>
                 <div class="stars">
-                    <p>Stars: {{hotel[0].stars}}</p>
+                    <p>Stars: {{hotel.id}}</p>
                 </div>
                 <div class="payment">
-                    <p>Payment: {{hotel[0].payment}}</p>
+                    <p>Payment: {{hotel.id}}</p>
                 </div>
             </div>
         </div>

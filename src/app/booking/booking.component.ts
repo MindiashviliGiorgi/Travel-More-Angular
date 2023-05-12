@@ -9,6 +9,7 @@ import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
 import { BookingForm } from '../auth/auth';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -18,7 +19,11 @@ import { map } from 'rxjs/operators';
 })
 export class BookingComponent {
 
-  constructor(private http : HttpClient){}
+
+  constructor(private http : HttpClient, private authService : AuthService){}
+  isAuthenticated(){
+    return this.authService.isAuthenticated;
+  }
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -31,8 +36,11 @@ export class BookingComponent {
 
   };
 
+  deleteIcon : string = '/assets/images/delete.png';
+
   
   selectable : boolean = false;
+  bookingListShow : boolean = false;
 
   public events : any[];
 
@@ -61,38 +69,7 @@ export class BookingComponent {
     }
 
 
-    this.events = [
-      {
-        title : "Antony's Family",
-        start : new Date(new Date().getTime()),
-      },
-      {
-        title : "Jhon",
-        start : new Date(new Date().getTime() + 86400000 * 2),
-        end : new Date(new Date().getTime() + 86400000 * 5),
-        description : 'Room 30'
-      },
-      // {
-      //   title : "Reus",
-      //   start : new Date(new Date().getTime() + (286400000 * 3.3)),
-      // },
-      // {
-      //   title : "Rashford",
-      //   start : new Date(new Date().getTime() + (286400000 * 2)),
-      //   end : new Date(new Date().getTime() + (286400000 * 3) )
-      // },
-      // {
-      //   start: '2014-11-10T10:00:00',
-      //   end: '2014-11-10T16:00:00',
-      //   display: 'background'
-      // },
-      // {
-      //   groupId: 'testGroupId',
-      //   start: '2014-11-10T10:00:00',
-      //   end: '2014-11-10T16:00:00',
-      //   display: 'inverse-background'
-      // },
-    ];
+    this.events = [];
 
   }
 
@@ -106,6 +83,9 @@ export class BookingComponent {
     room : '',
   }
 
+  price : string = '';
+
+
   onSubmit(bookingForm : BookingForm){
     const headers = new HttpHeaders({'myHeader' : 'booking'})
     this.http.post('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/bookingform.json', bookingForm,
@@ -113,7 +93,9 @@ export class BookingComponent {
     .subscribe((res) => {
       console.log(res)
     })
-    console.log(bookingForm)
+    console.log(bookingForm);
+    alert('Tap to Show Booking');
+    this.openBookingSystem = false;
   }
 
   private fetchBooking(){
@@ -138,6 +120,12 @@ export class BookingComponent {
     this.fetchBooking();
   }
 
+  bookingDelete(id:string){
+    this.http.delete('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/bookingform/' + id + '.json')
+    .subscribe();
+    alert('Tap to Show Booking');
+  }
+  
   
 
 }

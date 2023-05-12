@@ -73,7 +73,7 @@ export class HotelsPanelComponent {
     this.showAddNewWindow = false;
   }
 
-  hotelsInfo:any = false;
+  hotelsInfo:boolean = false;
 
   openHotelInfo(id:string){
     this.hotelsInfo = true;

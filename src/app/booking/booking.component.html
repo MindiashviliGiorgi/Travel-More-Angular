@@ -1,7 +1,13 @@
 <app-header></app-header>
 <div class="booking-main">
-  <button (click)="openBookingSystem = true">Book Your Travel</button>
+
   <full-calendar class="full-calendar" [options]="calendarOptions" [events]="events"></full-calendar>
+
+  <div class="booking-btns">
+    <button (click)="onBookingFetch()">Show Booking</button>
+    <button (click)="openBookingSystem = true">Book Your Travel</button>
+  </div>
+
   <div class="alert-booking" *ngIf="openBookingSystem">
     <div class="add-booking-item">
       <div class="title">
@@ -36,6 +42,30 @@
             <input type="submit" (click)="onSubmit(bookingForm)">
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-list" *ngIf="events.length > 0">
+    <div class="list-title">
+      <h3>Your Booking</h3>
+    </div>
+    <div class="headers-list">
+      <h4>Name</h4>
+      <h4>Start Date</h4>
+      <h4>End Date</h4>
+      <h4>Room</h4>
+      <h4 *ngIf="isAuthenticated()">Delete</h4>
+    </div>
+    <div class="list" *ngFor="let bookingItem of events; index as i;">
+      <div class="booking-item">
+        <li><p>{{bookingItem.title}}</p></li>
+        <li><p>{{bookingItem.start}}</p></li>
+        <li><p>{{bookingItem.end}}</p></li>
+        <li><p>{{bookingItem.room}}</p></li>
+        <li *ngIf="isAuthenticated()">
+          <img [src]="deleteIcon" (click)="bookingDelete(bookingItem.id)">
+        </li>
       </div>
     </div>
   </div>

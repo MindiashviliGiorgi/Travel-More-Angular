@@ -165,10 +165,11 @@
                 }
                 ul {
                     border-bottom: 1px solid #E2E8F0;
+                    width: 100%;
                     padding: 10px 0px;
                     display: flex;
                     flex-direction: row;
-                    column-gap: 120px;
+                    column-gap: 2px;
                     align-items: center;
                     padding: 10px;
                     border-radius: 4px;
@@ -186,7 +187,6 @@
                         }
                         li {
                             list-style: none;
-                            width: 101px;
                             display: flex;
                             flex-direction: row;
                             column-gap: 120px;

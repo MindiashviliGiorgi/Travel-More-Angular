@@ -1,26 +1,9 @@
 <div class="login-main">
+
     <div class="icon-logo">
         <div class="aside-title">
             <img [src]="logo">
             <h1>Travel More</h1>
-        </div>
-    </div>
-    <div class="join-for-guest">
-        <div class="join-container">
-            <div class="jc-title">
-                <h3>Join As Guest</h3>
-            </div>
-            <div class="jc-about">
-                <p>
-                    If you only want to join for booking
-                    hotels just tap the button down below
-                </p>
-            </div>
-            <div class="jc-button">
-                <button [routerLink]="'/hotelsmain'">
-                    Join As Guest
-                </button>
-            </div>
         </div>
     </div>
     <div class="container-main">
@@ -85,6 +68,25 @@
                 <div class="welcome-back-btn">
                     <button (click)="signInBtn()">Sign In</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="join-for-guest">
+        <div class="join-container">
+            <div class="jc-title">
+                <h3>Join As Guest</h3>
+            </div>
+            <div class="jc-about">
+                <p>
+                    If you only want to join for booking
+                    hotels just tap the button
+                </p>
+            </div>
+            <div class="jc-button">
+                <button [routerLink]="'/hotelsmain'">
+                    Join As Guest
+                </button>
             </div>
         </div>
     </div>
