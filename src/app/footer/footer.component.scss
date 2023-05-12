@@ -89,3 +89,47 @@
         }
     }
 }
+
+$breakpoint-tablet: 391px;
+@media (max-width: $breakpoint-tablet) {
+    .footer-main {
+        width: 390px;
+        height: 520px;
+        padding: 20px 0px;
+        flex-direction: column;
+        display: flex;
+        row-gap: 10px;
+        justify-content:flex-start;
+        align-items: center;
+        .footer-logo {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .footer-center {
+            margin-bottom: 25px;
+            .links {
+                a {
+                    img {
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+        .footer-right {
+            .contact {
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                .phone,
+                .gmail {
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    
+                }
+            }
+        }
+    }
+  }

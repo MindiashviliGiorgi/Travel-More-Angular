@@ -1,11 +1,12 @@
 .fixregister-main {
+  padding-top: 30px;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   form {
-    width: 400px;
+    width: 450px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -80,5 +81,12 @@
         border-radius: 10px;
       }
     }
+  }
+}
+
+$breakpoint-tablet: 391px;
+@media (max-width: $breakpoint-tablet) {
+  .fixregister-main {
+    width: 300px;
   }
 }

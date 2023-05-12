@@ -489,3 +489,56 @@
         }
     }
 }
+
+$breakpoint-tablet: 391px;
+@media (max-width: $breakpoint-tablet) {
+  .login-main {
+    padding: 0px 10px;
+    height: auto;
+    .icon-logo {
+        left: 26%;
+        top: 10px;
+    }
+    .join-for-guest {
+        width: 370px;
+        .join-container {
+            width: 370px;
+            .jc-title {
+                display: none;
+            }
+            .jc-about {
+                display: none;
+            }
+        }
+    }
+    .container-main {
+        width: 370px;
+        padding: 0px 10px;
+        align-items: center;
+        justify-content: center;
+        .container {
+            padding: 0px;
+            width: 370px;
+            .hello-friend {
+                display: none;
+            }
+            .sign-in {
+                width: 370px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+            .welcome-back {
+                display: none;
+            }
+            .sign-up {
+                width: 370px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+  }
+}
