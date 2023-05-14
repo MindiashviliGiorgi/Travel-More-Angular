@@ -1,16 +1,16 @@
 {
-  "hotels" : [{
-    "name" : "Stamba Hotel",
-    "stars" : 5,
-    "registrationDate" : "01/09/2022",
-    "payments" : "cash",
-    "about" : "hotel is cool and fresh"
-  },
-  {
-    "name" : "Gio Hotel",
-    "stars" : 4,
-    "registrationDate" : "01/11/2022",
-    "payments" : "card",
-    "about" : "hotel is fresh"
+  "hosting": {
+    "public": "dist/travel-more-gm",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
-]}
+}
