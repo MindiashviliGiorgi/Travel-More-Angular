@@ -290,3 +290,24 @@
     }
 
 }
+
+$breakpoint-tablet: 391px;
+@media (max-width: $breakpoint-tablet) {
+    .hotels-main-page {
+        .sort {
+            width: 390px;
+            height: auto;
+            flex-direction: column;
+            row-gap: 8px;
+            display: flex;
+            padding: 10px 10px;
+        }
+        .hotels-containers-main {
+            width: 390px;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+}

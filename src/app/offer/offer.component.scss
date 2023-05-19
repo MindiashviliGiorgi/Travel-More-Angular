@@ -116,3 +116,17 @@
     row-gap: 10px;
   }
 }
+
+$breakpoint-tablet: 391px;
+@media (max-width: $breakpoint-tablet){
+  .offer-main {
+    width: 390px;
+    padding: 20px 10px;
+    .summer-offer,
+    .winter-offer {
+      .sale-decore {
+        top: 70px;
+      }
+    }
+  }
+}

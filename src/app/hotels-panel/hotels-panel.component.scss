@@ -489,3 +489,111 @@
         }
     }
 }
+
+
+$hotelsPanelRespo : 391px;
+@media (max-width : $hotelsPanelRespo) {
+    .app {
+        display: none;
+    }
+    .app-header {
+        display: none;
+    }
+    .hotels-section {
+        padding: 20px 10px;
+        min-height: 100vh;
+        width: 390px;
+        display: flex;
+        justify-content: center;
+        .hotels-main {
+            width: 380px;
+            .hotels-top {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 5px;
+                .hotels-top-left {
+                    width: 100%;
+                    .new-items {
+                        flex-direction: row;
+                        column-gap: 5px;
+                        display: flex;
+                    }
+                }
+                .hotels-top-right {
+                    flex-direction: column;
+                    row-gap: 5px;
+                    .select {
+                        display: none;
+                    }
+
+                }
+            }
+            .hotels-middle {
+                display: none;
+            }
+            .hotels-data {
+                width: 100%;
+                height: auto;
+                padding: 0px;
+                .hotels-container {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                    padding: 0px;
+                    width: 100%;
+                    ul {
+                        display: flex;
+                        width: 100%;
+                        padding: 0px 10px;
+                        flex-direction: column;
+                        row-gap: 10px;
+                        height: auto;
+                        padding-bottom: 10px;
+                        li {
+                            padding: 0px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .add-new-window {
+        width: 390px;
+        padding: 0px 10px;
+        height: auto;
+        .container {
+            width: 100%;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            form {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                row-gap: 5px;
+                .set {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    padding: 0px;
+                    .set-left,
+                    .set-right {
+                        width: 100%;
+                        flex-direction: column;
+                        row-gap: 2px;
+                        padding: 0px;
+                        .name {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

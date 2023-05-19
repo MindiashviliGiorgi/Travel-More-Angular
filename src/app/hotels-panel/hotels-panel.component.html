@@ -1,5 +1,5 @@
-<app-aside></app-aside>
-<app-admin-header></app-admin-header>
+<app-aside class="app"></app-aside>
+<app-admin-header class="app-header"></app-admin-header>
 <section>
 <div class="hotels-section">
     <div class="hotels-main">
@@ -47,7 +47,7 @@
             <div class="hotels-container">
                 <ul *ngFor="let hotel of allHotels; index as i; " >
                     <ng-container *ngIf="enteredSearchValue === '' || hotel.name.toLowerCase().includes(enteredSearchValue)">
-                        <li><p>{{i + 1}}</p></li>
+                        <li><p class="oas">#{{i + 1}}</p></li>
                         <li><p>{{hotel.name}}</p></li>
                         <li><p>{{hotel.stars}}</p></li>
                         <li><p>{{hotel.city}}</p></li>

@@ -493,7 +493,7 @@
 $breakpoint-tablet: 391px;
 @media (max-width: $breakpoint-tablet) {
   .login-main {
-    padding: 0px 10px;
+    padding: 20px 10px;
     height: auto;
     .icon-logo {
         left: 26%;
@@ -512,6 +512,7 @@ $breakpoint-tablet: 391px;
         }
     }
     .container-main {
+        margin-top: 70px;
         width: 370px;
         padding: 0px 10px;
         align-items: center;

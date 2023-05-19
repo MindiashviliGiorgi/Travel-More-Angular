@@ -216,3 +216,48 @@
     }
   }
 }
+
+$bookingResponsive : 391px;
+@media (max-width : $bookingResponsive) {
+  .booking-main {
+    width: 390px;
+    padding: 20px 10px;
+    .full-calendar {
+      width: 100%;
+      font-size: 12px;
+    }
+    .alert-booking {
+      width: 390px;
+      padding: 20px 0px;
+      .add-booking-item {
+        height: auto;
+      }
+    }
+    .booking-list {
+      width: 370px;
+      flex-direction: row;
+      column-gap: 0px;
+      display: flex;
+      padding: 20px 10px;
+      .list-title {
+        display: none;
+      }
+      .headers-list {
+        flex-direction: column;
+        row-gap: 0px;
+        padding: 13px 0px;
+      }
+      .list {
+        padding: 0px;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        row-gap: 10px;
+        .booking-item {
+          flex-direction: column;
+          row-gap: 10px;
+        }
+      }
+    }
+  }
+}

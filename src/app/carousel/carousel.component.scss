@@ -83,3 +83,21 @@
   }
 
 }
+
+$carouselRespo : 391px;
+@media (max-width : $carouselRespo) {
+  .carousel-main {
+    width: 390px;
+    height: auto;
+    .btn-carousel {
+      padding: 0px;
+      margin: 0px 4px;
+    }
+    .carousel-container {
+      img {
+        width: 280px;
+        height: 240px;
+      }
+    }
+  }
+}

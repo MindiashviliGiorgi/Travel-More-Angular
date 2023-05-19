@@ -15,3 +15,11 @@
     line-height: 30px;
   }
 }
+
+$aboutResponsive : 391px;
+@media (max-width : $aboutResponsive) {
+  .about-page-main {
+    padding: 30px 40px;
+    height: auto;
+  }
+}

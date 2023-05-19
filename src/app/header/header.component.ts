@@ -13,6 +13,8 @@ export class HeaderComponent {
   logo:string = '/assets/images/travelmore-logo.png';
   myImg:string = '/assets/images/better-logout.png';
   adminPanel:string = '/assets/images/admin-panel.png';
+  hamburger:string = '/assets/images/hamburger-menu.png';
+  hamburgerMenu : boolean = false;
 
   isAuthenticated(){
     return this.authService.isAuthenticated;
@@ -20,5 +22,9 @@ export class HeaderComponent {
 
   signOut(){
     this.authService.logout();
+  }
+
+  closeHamburger(){
+    this.hamburgerMenu = false; 
   }
 }

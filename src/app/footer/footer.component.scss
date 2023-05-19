@@ -94,7 +94,7 @@ $breakpoint-tablet: 391px;
 @media (max-width: $breakpoint-tablet) {
     .footer-main {
         width: 390px;
-        height: 520px;
+        height: auto;
         padding: 20px 0px;
         flex-direction: column;
         display: flex;

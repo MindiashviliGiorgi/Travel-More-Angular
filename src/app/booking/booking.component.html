@@ -57,8 +57,8 @@
       <h4>Room</h4>
       <h4 *ngIf="isAuthenticated()">Delete</h4>
     </div>
-    <div class="list" *ngFor="let bookingItem of events; index as i;">
-      <div class="booking-item">
+    <div class="list" >
+      <div class="booking-item" *ngFor="let bookingItem of events; index as i;">
         <li><p>{{bookingItem.title}}</p></li>
         <li><p>{{bookingItem.start}}</p></li>
         <li><p>{{bookingItem.end}}</p></li>

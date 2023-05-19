@@ -5,6 +5,28 @@
             <h1>Travel More</h1>
         </div>
     </div>
+    <div class="hamburger">
+        <div class="icon" (click)="hamburgerMenu = true">
+            <img [src]="hamburger">
+        </div>
+        <div class="hamburger-menu" *ngIf="hamburgerMenu">
+            <div class="menu">
+                <div class="menu-links">
+                    <ul>
+                        <span (click)="closeHamburger()">
+                            Close
+                        </span>
+                        <li [routerLink]="'/hotelsmain'" (click)="closeHamburger()">Hotels</li>
+                        <li [routerLink]="'/offerpage'" (click)="closeHamburger()">Offers</li>
+                        <li [routerLink]="'/booking'" (click)="closeHamburger()">Booking</li>
+                        <li [routerLink]="'/aboutproject'" (click)="closeHamburger()">About</li>
+                        <li [routerLink]="'/adminpanel'" *ngIf="isAuthenticated()">Admin Panel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <div class="header-center">
         <ul>
             <li [routerLink]="'/hotelsmain'">Hotels</li>
