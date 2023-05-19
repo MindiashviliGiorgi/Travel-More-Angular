@@ -27,7 +27,7 @@
     "@fullcalendar/resource": "^6.1.7",
     "@fullcalendar/resource-timeline": "^6.1.7",
     "@fullcalendar/timegrid": "^6.1.7",
-    "firebase": "^9.21.0",
+    "firebase": "^9.22.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
