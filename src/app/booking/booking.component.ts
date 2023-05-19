@@ -88,7 +88,7 @@ export class BookingComponent {
 
   onSubmit(bookingForm : BookingForm){
     const headers = new HttpHeaders({'myHeader' : 'booking'})
-    this.http.post('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/bookingform.json', bookingForm,
+    this.http.post('https://travelgm-2b9da-default-rtdb.europe-west1.firebasedatabase.app/bookingform.json', bookingForm,
     {headers: headers})
     .subscribe((res) => {
       console.log(res)
@@ -99,7 +99,7 @@ export class BookingComponent {
   }
 
   private fetchBooking(){
-    this.http.get('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/bookingform.json')
+    this.http.get('https://travelgm-2b9da-default-rtdb.europe-west1.firebasedatabase.app/bookingform.json')
     .pipe(map((res) => {
       // const bookingArray = [];
       this.events = [];
@@ -121,7 +121,7 @@ export class BookingComponent {
   }
 
   bookingDelete(id:string){
-    this.http.delete('https://travel-more-gm-default-rtdb.europe-west1.firebasedatabase.app/bookingform/' + id + '.json')
+    this.http.delete('https://travelgm-2b9da-default-rtdb.europe-west1.firebasedatabase.app/' + id + '.json')
     .subscribe();
     alert('Tap to Show Booking');
   }

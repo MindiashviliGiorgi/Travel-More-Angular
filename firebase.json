@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/travel-more-gm",
+    "public": "dist/travelgm-2b9da",
     "ignore": [
       "firebase.json",
       "**/.*",
